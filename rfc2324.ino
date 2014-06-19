@@ -70,17 +70,17 @@ void stopWarming(){
 }
 
 const char cofffee_reponse_BREW[] PROGMEM =
-"COFFEE/1.0 200 OK\r\n"
+"COFFEE/1.0 600 OK\r\n"
 "Content-Type: application/coffee-pot-response\r\n"
 "Status: brewing\r\n\r\n";
 
 const char cofffee_response_WHEN[] PROGMEM =
-"COFFEE/1.0 200 OK\r\n"
+"COFFEE/1.0 600 OK\r\n"
 "Content-Type: application/coffee-pot-response\r\n"
 "Status: stopped\r\n\r\n";
 
 const char cofffee_response_WARM[] PROGMEM =
-"COFFEE/1.0 200 OK\r\n"
+"COFFEE/1.0 600 OK\r\n"
 "Content-Type: application/coffee-pot-response\r\n"
 "Status: warming\r\n\r\n";
 
