@@ -14,15 +14,15 @@ int warmPin = 4;
 void setup(){
 	Serial.begin(9600);
 	if (ether.begin(sizeof Ethernet::buffer, mymac) == 0) 
-    	Serial.println( "Failed to access Ethernet controller");
+    		Serial.println( "Failed to access Ethernet controller");
 
 	if (!ether.dhcpSetup()){
-    	Serial.println("DHCP failed");
-    	Serial.println("Using static addresses");
-    	ether.staticSetup(myipfornow, gwipfornow);
-    } else {
-    	Serial.println("DHCP lease aquired");
-    }
+    		Serial.println("DHCP failed");
+    		Serial.println("Using static addresses");
+    		ether.staticSetup(myipfornow, gwipfornow);
+    	} else {
+    		Serial.println("DHCP lease aquired");
+    	}
 
 	ether.printIp("IP:  ", ether.myip);
 	ether.printIp("GW:  ", ether.gwip);
@@ -70,19 +70,19 @@ void stopWarming(){
 }
 
 const char cofffee_reponse_BREW[] PROGMEM =
-"COFFEE/1.0 600 OK\r\n"
-"Content-Type: application/coffee-pot-response\r\n"
-"Status: brewing\r\n\r\n";
+	"COFFEE/1.0 600 OK\r\n"
+	"Content-Type: application/coffee-pot-response\r\n"
+	"Status: brewing\r\n\r\n";
 
 const char cofffee_response_WHEN[] PROGMEM =
-"COFFEE/1.0 600 OK\r\n"
-"Content-Type: application/coffee-pot-response\r\n"
-"Status: stopped\r\n\r\n";
+	"COFFEE/1.0 600 OK\r\n"
+	"Content-Type: application/coffee-pot-response\r\n"
+	"Status: stopped\r\n\r\n";
 
 const char cofffee_response_WARM[] PROGMEM =
-"COFFEE/1.0 600 OK\r\n"
-"Content-Type: application/coffee-pot-response\r\n"
-"Status: warming\r\n\r\n";
+	"COFFEE/1.0 600 OK\r\n"
+	"Content-Type: application/coffee-pot-response\r\n"
+	"Status: warming\r\n\r\n";
 
 void loop(){
 	/*if (!STATIC && ether.dhcpExpired()) {
