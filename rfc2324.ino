@@ -1,5 +1,6 @@
 #include <EtherCard.h>
 
+
 static byte mymac[] = { 
   0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 
@@ -8,13 +9,18 @@ byte gwipfornow[] = { 10,0,0,138 };
 
 byte Ethernet::buffer[700];
 
-int brewPin = 2;
+int brewPin = 3;
 int warmPin = 4;
 
 void setup(){
-	Serial.begin(9600);
-	if (ether.begin(sizeof Ethernet::buffer, mymac) == 0) 
+	Serial.begin(115200);
+	Serial.println("Serial line up");
+	if (ether.begin(sizeof Ethernet::buffer, mymac) == 0) {
     	Serial.println( "Failed to access Ethernet controller");
+	} else {
+		Serial.println("Ethernet module found");
+	}
+		
 
 	if (!ether.dhcpSetup()){
     	Serial.println("DHCP failed");
